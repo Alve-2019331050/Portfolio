@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaEnvelope, FaTrophy, FaMedal, FaReact, FaNodeJs, FaPython, FaJava, FaCss3Alt } from 'react-icons/fa';
-import { SiCodeforces, SiCodechef, SiJavascript, SiTypescript, SiMongodb, SiExpress, SiSpringboot, SiDjango, SiTailwindcss, SiPostgresql, SiRedux, SiFlutter, SiFirebase, SiArduino, SiJavafx } from 'react-icons/si';
+import { SiCodeforces, SiCodechef, SiJavascript, SiTypescript, SiMongodb, SiExpress, SiSpringboot, SiDjango, SiTailwindcss, SiPostgresql, SiRedux, SiFlutter, SiFirebase, SiArduino } from 'react-icons/si';
 import { GiPodium } from 'react-icons/gi';
 import { TbBrandNextjs } from 'react-icons/tb';
 import Image from 'next/image';
