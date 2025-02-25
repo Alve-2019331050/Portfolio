@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaEnvelope, FaTrophy, FaMedal, FaReact, FaNodeJs, FaPython, FaJava, FaCss3Alt } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaTrophy, FaMedal, FaReact, FaNodeJs, FaPython, FaJava, FaCss3Alt, FaUsers, FaChalkboardTeacher } from 'react-icons/fa';
 import { SiCodeforces, SiCodechef, SiJavascript, SiTypescript, SiMongodb, SiExpress, SiSpringboot, SiDjango, SiTailwindcss, SiPostgresql, SiRedux, SiFlutter, SiFirebase, SiArduino } from 'react-icons/si';
 import { GiPodium } from 'react-icons/gi';
 import { TbBrandNextjs } from 'react-icons/tb';
@@ -106,6 +106,77 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Education Section */}
+      <section className="py-20 relative z-10">
+        <div className="container mx-auto px-3 md:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl font-bold mb-12 text-center">Education</h2>
+            <div className="max-w-[60rem] mx-auto space-y-6">
+              {/* SUST Education */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+                className="bg-gray-900/50 rounded-xl overflow-hidden hover:shadow-xl hover:shadow-blue-500/20 transition-all duration-300"
+              >
+                <div className="p-6 flex items-center gap-6">
+                  <div className="flex-shrink-0">
+                    <Image
+                      src="/sust.png"
+                      alt="SUST Logo"
+                      width={100}
+                      height={100}
+                      className="rounded-lg"
+                    />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold mb-2 text-blue-400">Shahjalal University of Science and Technology</h3>
+                    <p className="text-gray-300">Bachelor of Science in Computer Science and Engineering</p>
+                    <p className="text-gray-300">February 2020 - May 2025 (Expected)</p>
+                    <p className="text-gray-300">Sylhet, Bangladesh</p>
+                    <p className="text-gray-300">CGPA: 3.89 (up to 6th Semester)</p>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Notre Dame College Education */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+                className="bg-gray-900/50 rounded-xl overflow-hidden hover:shadow-xl hover:shadow-blue-500/20 transition-all duration-300"
+              >
+                <div className="p-6 flex items-center gap-6">
+                  <div className="flex-shrink-0">
+                    <Image
+                      src="/ndc.png"
+                      alt="Notre Dame College Logo"
+                      width={100}
+                      height={100}
+                      className="rounded-lg"
+                    />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold mb-2 text-blue-400">Notre Dame College</h3>
+                    <p className="text-gray-300">Higher Secondary Certificate</p>
+                    <p className="text-gray-300">2017 - 2019</p>
+                    <p className="text-gray-300">Dhaka, Bangladesh</p>
+                    <p className="text-gray-300">Board Merit Scholarship</p>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Accomplishments Section */}
       <section className="py-20 relative z-10">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
@@ -116,10 +187,10 @@ export default function Home() {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl font-bold mb-12 text-center">Accomplishments</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-7xl mx-auto">
               {/* Codeforces */}
               <motion.div
-                whileHover={{ 
+                whileHover={{
                   scale: 1.02,
                   boxShadow: "0 0 30px rgba(59, 130, 246, 0.3)"
                 }}
@@ -144,7 +215,7 @@ export default function Home() {
 
               {/* Codechef */}
               <motion.div
-                whileHover={{ 
+                whileHover={{
                   scale: 1.02,
                   boxShadow: "0 0 30px rgba(59, 130, 246, 0.3)"
                 }}
@@ -169,7 +240,7 @@ export default function Home() {
 
               {/* SUST Contest */}
               <motion.div
-                whileHover={{ 
+                whileHover={{
                   scale: 1.02,
                   boxShadow: "0 0 30px rgba(59, 130, 246, 0.3)"
                 }}
@@ -185,16 +256,16 @@ export default function Home() {
                   />
                 </div>
                 <h3 className="text-xl font-bold mb-2 text-blue-400 group-hover:text-cyan-300 transition-colors duration-300">
-                  SUST Inter University Programming Contest
+                  SUST Inter University Programming Contest 2024
                 </h3>
                 <p className="text-gray-300 group-hover:text-blue-200 transition-colors duration-300">
-                  Secured 5th Position (2024)
+                  Secured 5th Position
                 </p>
               </motion.div>
 
               {/* NCPC */}
               <motion.div
-                whileHover={{ 
+                whileHover={{
                   scale: 1.02,
                   boxShadow: "0 0 30px rgba(59, 130, 246, 0.3)"
                 }}
@@ -219,7 +290,7 @@ export default function Home() {
 
               {/* ICPC */}
               <motion.div
-                whileHover={{ 
+                whileHover={{
                   scale: 1.02,
                   boxShadow: "0 0 30px rgba(59, 130, 246, 0.3)"
                 }}
@@ -244,7 +315,7 @@ export default function Home() {
 
               {/* Prothom Alo */}
               <motion.div
-                whileHover={{ 
+                whileHover={{
                   scale: 1.02,
                   boxShadow: "0 0 30px rgba(59, 130, 246, 0.3)"
                 }}
@@ -261,9 +332,9 @@ export default function Home() {
                 </p>
               </motion.div>
 
-              {/* Problem Solving */}
+              {/* Smart Bangladesh Day */}
               <motion.div
-                whileHover={{ 
+                whileHover={{
                   scale: 1.02,
                   boxShadow: "0 0 30px rgba(59, 130, 246, 0.3)"
                 }}
@@ -271,6 +342,50 @@ export default function Home() {
               >
                 <div className="absolute right-4 top-4 text-4xl text-[#FFD700] opacity-50 group-hover:opacity-80 transition-all duration-300 transform group-hover:scale-110 group-hover:rotate-12">
                   <FaMedal />
+                </div>
+                <h3 className="text-xl font-bold mb-2 text-blue-400 group-hover:text-cyan-300 transition-colors duration-300">
+                  Smart Bangladesh Day 2023 Programming Contest
+                </h3>
+                <p className="text-gray-300 group-hover:text-blue-200 transition-colors duration-300">
+                  2nd Runners Up
+                </p>
+              </motion.div>
+
+              {/* SEC */}
+              <motion.div
+                whileHover={{
+                  scale: 1.02,
+                  boxShadow: "0 0 30px rgba(59, 130, 246, 0.3)"
+                }}
+                className="glass card-hover p-6 rounded-xl relative group"
+              >
+                <div className="absolute right-4 top-4 text-4xl text-[#FFD700] opacity-50 group-hover:opacity-80 transition-all duration-300 transform group-hover:scale-110 group-hover:rotate-12">
+                  <FaMedal />
+                </div>
+                <h3 className="text-xl font-bold mb-2 text-blue-400 group-hover:text-cyan-300 transition-colors duration-300">
+                  SEC Inter University Junior Programming Contest 2022
+                </h3>
+                <p className="text-gray-300 group-hover:text-blue-200 transition-colors duration-300">
+                  Secured 11th Position
+                </p>
+              </motion.div>
+
+              {/* Problem Solving */}
+              <motion.div
+                whileHover={{
+                  scale: 1.02,
+                  boxShadow: "0 0 30px rgba(59, 130, 246, 0.3)"
+                }}
+                className="glass card-hover p-6 rounded-xl relative group"
+              >
+                <div className="absolute right-4 top-4 text-4xl text-[#FFD700] opacity-80 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-110 group-hover:rotate-12">
+                  <Image
+                    src="/idea.svg"
+                    alt="Idea Logo"
+                    width={60}
+                    height={60}
+                    className="rounded-lg"
+                  />
                 </div>
                 <h3 className="text-xl font-bold mb-2 text-blue-400 group-hover:text-cyan-300 transition-colors duration-300">
                   Problem Solving
@@ -282,7 +397,7 @@ export default function Home() {
 
               {/* Country Rank */}
               <motion.div
-                whileHover={{ 
+                whileHover={{
                   scale: 1.02,
                   boxShadow: "0 0 30px rgba(59, 130, 246, 0.3)"
                 }}
@@ -612,6 +727,59 @@ export default function Home() {
                   <div>
                     <h3 className="text-xl font-bold mb-2 text-blue-400">Intra SUST Programming Contest 2023</h3>
                     <p className="text-gray-300">Problem Setter, Tester & Judge</p>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Voluntary Activities Section */}
+      <section className="py-20 relative z-10">
+        <div className="container mx-auto px-3 md:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl font-bold mb-12 text-center">Voluntary Activities</h2>
+            <div className="max-w-[60rem] mx-auto space-y-6">
+              {/* Training Camp */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+                className="bg-gray-900/50 rounded-xl overflow-hidden hover:shadow-xl hover:shadow-blue-500/20 transition-all duration-300"
+              >
+                <div className="p-6 flex items-center gap-6">
+                  <div className="flex-shrink-0">
+                    <FaChalkboardTeacher className="w-20 h-20 text-blue-400" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold mb-2 text-blue-400">Trainer</h3>
+                    <p className="text-gray-300">SUST Competitive Programming Training Camp</p>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Mentorship */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+                className="bg-gray-900/50 rounded-xl overflow-hidden hover:shadow-xl hover:shadow-blue-500/20 transition-all duration-300"
+              >
+                <div className="p-6 flex items-center gap-6">
+                  <div className="flex-shrink-0">
+                    <FaUsers className="w-20 h-20 text-blue-400" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold mb-2 text-blue-400">Appointed Mentor for Juniors</h3>
+                    <p className="text-gray-300">SUST Competitive Programming Community</p>
                   </div>
                 </div>
               </motion.div>
