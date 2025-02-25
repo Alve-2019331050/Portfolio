@@ -8,6 +8,72 @@ import { TbBrandNextjs } from 'react-icons/tb';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
+// Client-side only component for animations
+const AnimatedBackground = () => {
+  const [particles, setParticles] = useState<Array<{ top: string; left: string; duration: number }>>([]);
+  const [orbs, setOrbs] = useState<Array<{ width: number; height: number; left: string }>>([]);
+
+  useEffect(() => {
+    setParticles(
+      [...Array(5)].map(() => ({
+        top: `${Math.random() * 100}%`,
+        left: `${Math.random() * 100}%`,
+        duration: 3 + Math.random() * 4,
+      }))
+    );
+
+    setOrbs(
+      [...Array(20)].map(() => ({
+        width: Math.random() * 300 + 50,
+        height: Math.random() * 300 + 50,
+        left: `${Math.random() * 100}%`,
+      }))
+    );
+  }, []);
+
+  return (
+    <>
+      <div className="absolute inset-0 overflow-hidden">
+        {particles.map((particle, i) => (
+          <div
+            key={i}
+            className="absolute w-2 h-2 bg-blue-400 rounded-full opacity-30"
+            style={{
+              top: particle.top,
+              left: particle.left,
+              animation: `float ${particle.duration}s linear infinite`
+            }}
+          />
+        ))}
+      </div>
+      <div className="absolute inset-0 overflow-hidden">
+        {orbs.map((orb, i) => (
+          <motion.div
+            key={i}
+            className="absolute rounded-full bg-blue-500/5"
+            style={{
+              width: orb.width,
+              height: orb.height,
+              left: orb.left,
+              top: '-20%',
+            }}
+            animate={{
+              top: ['-20%', '120%'],
+              opacity: [0, 0.5, 0],
+            }}
+            transition={{
+              duration: 15 + Math.random() * 10,
+              repeat: Infinity,
+              ease: 'linear',
+              delay: i * -2,
+            }}
+          />
+        ))}
+      </div>
+    </>
+  );
+};
+
 export default function Home() {
   const [orbs, setOrbs] = useState<Array<{ width: number; height: number; left: string }>>([]);
 
@@ -24,29 +90,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-black via-navy-900 to-blue-900 text-white relative overflow-hidden">
       {/* Animated background effects */}
-      <div className="absolute inset-0 w-full h-full">
-        {orbs.map((orb, i) => (
-          <motion.div
-            key={i}
-            className="absolute bg-white/5 rounded-full"
-            style={{
-              width: orb.width,
-              height: orb.height,
-              left: orb.left,
-              top: `${Math.floor(i / 5) * 25}%`,
-            }}
-            animate={{
-              y: [0, 30, 0],
-              opacity: [0.1, 0.3, 0.1],
-            }}
-            transition={{
-              duration: 5,
-              repeat: Infinity,
-              delay: i * 0.2,
-            }}
-          />
-        ))}
-      </div>
+      <AnimatedBackground />
       {/* Hero Section */}
       <section className="h-screen flex items-center justify-center">
         <div className="container mx-auto px-4 text-center">
@@ -90,20 +134,41 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className="py-20 bg-gray-800/50">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl font-bold mb-8 text-center">About Me</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              I am a passionate problem solver with five years of experience in competitive programming, consistently tackling algorithmic challenges and optimizing solutions. With a strong foundation in data structures, algorithms, and mathematical reasoning, I have ranked in multiple national-level contests. Alongside my problem-solving expertise, I have worked on machine learning projects, applying AI techniques to real-world datasets. I am always eager to learn, innovate, and take on challenging problems in software development and AI.
-            </p>
-          </motion.div>
+      <section className="py-12 relative">
+        <div className="container mx-auto px-4 relative z-10">
+        <h2 className="text-4xl font-bold mb-12 text-center">About Me</h2>
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              className="glass p-8 rounded-2xl shadow-2xl backdrop-blur-lg relative overflow-hidden group"
+            >
+              {/* Animated gradient border */}
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 opacity-20 group-hover:opacity-30 transition-opacity duration-300"></div>
+              
+              <div className="relative z-10">
+                <motion.p 
+                  className="text-lg text-gray-300 leading-relaxed mb-6"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.8 }}
+                >
+                  I am a passionate problem solver with five years of experience in competitive programming, consistently tackling algorithmic challenges and optimizing solutions. With a strong foundation in data structures, algorithms, and mathematical reasoning, I have ranked in multiple national-level contests. Alongside my problem-solving expertise, I have worked on machine learning projects, applying AI techniques to real-world datasets. I am always eager to learn, innovate, and take on challenging problems in software development and AI.
+                </motion.p>
+                <motion.p 
+                  className="text-lg text-gray-300 leading-relaxed"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1 }}
+                >
+                  Beyond competition, I'm deeply involved in nurturing the next generation of programmers through mentoring and training camps. My technical expertise spans across modern web technologies, and I'm always excited to tackle new challenges and create innovative solutions.
+                </motion.p>
+              </div>
+            </motion.div>
+          </div>
         </div>
+        <AnimatedBackground />
       </section>
 
       {/* Education Section */}
