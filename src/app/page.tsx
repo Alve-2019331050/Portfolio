@@ -3,12 +3,14 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaEnvelope, FaTrophy, FaMedal, FaReact, FaNodeJs, FaJava, FaCss3Alt, FaUsers, FaChalkboardTeacher } from 'react-icons/fa';
-import { SiJavascript, SiMongodb, SiExpress, SiTailwindcss, SiFlutter, SiFirebase, SiArduino } from 'react-icons/si';
+import { FaGithub, FaLinkedin, FaEnvelope, FaTrophy, FaMedal, FaReact, FaNodeJs, FaJava, FaCss3Alt, FaUsers, FaChalkboardTeacher, FaFacebook } from 'react-icons/fa';
+import { SiJavascript, SiMongodb, SiExpress, SiTailwindcss, SiFlutter, SiFirebase, SiArduino, SiLeetcode, SiHackerrank, SiCodeforces, SiCodechef } from 'react-icons/si';
 import { GiPodium } from 'react-icons/gi';
 import { TbBrandNextjs } from 'react-icons/tb';
+import { FiCopy } from 'react-icons/fi';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import Preloader from '@/components/Preloader';
 
 // Client-side only component for animations
 const AnimatedBackground = () => {
@@ -91,22 +93,76 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-black via-navy-900 to-blue-900 text-white relative overflow-hidden">
+      <Preloader />
       {/* Animated background effects */}
       <AnimatedBackground />
-      {/* Hero Section */}
-      <section className="h-screen flex items-center justify-center">
-        <div className="container mx-auto px-4 text-center">
+      {/* Hero Section with enhanced animations */}
+      <section className="min-h-screen flex items-center justify-center relative py-20">
+        <motion.div 
+          className="container mx-auto px-6 text-center relative z-10"
+          style={{ opacity: 1, scale: 1 }}
+        >
           <motion.div
+            className="flex flex-col items-center space-y-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-6xl font-bold mb-4 glow-text animate-gradient bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500">
-              Hi, I'm MD. Shibly Rahman Alve
-            </h1>
-            <p className="text-2xl text-blue-200 mb-8 floating">
-              Competitive Programmer, Technology Enthusiast
-            </p>
+            <motion.span
+              className="text-2xl md:text-3xl bg-gradient-to-r from-purple-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent font-light tracking-wider"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              Hi, I'm
+            </motion.span>
+            <motion.h1
+              className="text-5xl md:text-7xl font-bold relative mb-8"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 0.3 }}
+            >
+              <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent animate-gradient-slow relative">
+                MD. Shibly Rahman Alve
+                <motion.div 
+                  className="absolute -inset-2 bg-gradient-to-r from-blue-500/20 via-cyan-500/20 to-purple-500/20 blur-xl -z-10"
+                  animate={{ 
+                    opacity: [0.5, 0.3, 0.5],
+                    scale: [1, 1.1, 1],
+                  }}
+                  transition={{ 
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                />
+              </span>
+            </motion.h1>
+            
+            <motion.div
+              className="mt-2"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              <motion.p 
+                className="text-xl md:text-2xl relative inline-block"
+                animate={{ y: [0, -10, 0] }}
+                transition={{ 
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              >
+                <span className="bg-gradient-to-r from-purple-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent animate-gradient-slow">
+                  Competitive Programmer
+                </span>
+                <span className="mx-3 text-cyan-400">&</span>
+                <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent animate-gradient-slow">
+                  Technology Enthusiast
+                </span>
+              </motion.p>
+            </motion.div>
             <div className="flex justify-center space-x-6">
               <a
                 href="https://github.com/Alve-2019331050"
@@ -130,13 +186,43 @@ export default function Home() {
               >
                 <FaEnvelope />
               </a>
+              <a
+                href="https://www.facebook.com/alve.rahman.699672"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-4xl text-gray-400 hover:text-blue-600 dark:text-blue-600 transition-all duration-300 hover:scale-125 hover:-translate-y-1 transform cursor-pointer"
+              >
+                <FaFacebook />
+              </a>
+              <a
+                href="https://codeforces.com/profile/AlveRahman"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-4xl transition-all duration-300 hover:scale-125 hover:-translate-y-1 transform cursor-pointer"
+              >
+                <Image
+                    src="/codeforces.svg"
+                    alt="Codeforces Logo"
+                    width={37}
+                    height={37}
+                    className="rounded-lg"
+                  />
+              </a>
+              <a
+                href="https://www.codechef.com/users/alve2000"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-4xl text-[#D2691E] hover:text-[#DEB887] transition-all duration-300 hover:scale-125 hover:-translate-y-1 transform cursor-pointer"
+              >
+                <SiCodechef />
+              </a>
             </div>
           </motion.div>
-        </div>
+        </motion.div>
       </section>
 
       {/* About Section */}
-      <section className="py-12 relative">
+      <section className="py-32 relative z-10">
         <div className="container mx-auto px-4 relative z-10">
         <h2 className="text-4xl font-bold mb-12 text-center">About Me</h2>
           <div className="max-w-4xl mx-auto">
@@ -156,7 +242,7 @@ export default function Home() {
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.8 }}
                 >
-                  I am a passionate problem solver with five years of experience in competitive programming, consistently tackling algorithmic challenges and optimizing solutions. With a strong foundation in data structures, algorithms, and mathematical reasoning, I have ranked in multiple national-level contests. Alongside my problem-solving expertise, I have worked on machine learning projects, applying AI techniques to real-world datasets. I am always eager to learn, innovate, and take on challenging problems in software development and AI.
+                  I am a passionate problem solver with five years of experience in competitive programming, consistently tackling algorithmic challenges and optimizing solutions. With a strong foundation in data structures, algorithms, and mathematical reasoning, I have ranked in multiple national-level contests. Alongside my problem-solving expertise, I have worked on machine learning projects, applying AI techniques to real-world datasets. I am always excited to explore new technologies, collaborate on impactful projects, and solve real-world challenges through innovative software solutions.
                 </motion.p>
                 <motion.p 
                   className="text-lg text-gray-300 leading-relaxed"
@@ -164,7 +250,7 @@ export default function Home() {
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.5, delay: 1 }}
                 >
-                  Beyond competition, I'm deeply involved in nurturing the next generation of programmers through mentoring and training camps. My technical expertise spans across modern web technologies, and I'm always excited to tackle new challenges and create innovative solutions.
+                  Beyond competitions, I have maintained strong academic performance throughout my undergraduate studies, consistently excelling in coursework while balancing my passion for problem-solving. With a CGPA of around 3.9, I have demonstrated a deep understanding of core computer science subjects, including algorithms, machine learning, and object-oriented programming. My ability to manage both competitive programming and academics reflects my dedication, time management skills, and commitment to continuous learning.
                 </motion.p>
               </div>
             </motion.div>
@@ -174,7 +260,7 @@ export default function Home() {
       </section>
 
       {/* Education Section */}
-      <section className="py-20 relative z-10">
+      <section className="py-32 relative z-10">
         <div className="container mx-auto px-3 md:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0 }}
@@ -245,7 +331,7 @@ export default function Home() {
       </section>
 
       {/* Accomplishments Section */}
-      <section className="py-20 relative z-10">
+      <section className="py-32 relative z-10">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <motion.div
             initial={{ opacity: 0 }}
@@ -486,7 +572,7 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section className="py-20 relative z-10">
+      <section className="py-32 relative z-10">
         <div className="container mx-auto px-3 md:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0 }}
@@ -551,7 +637,7 @@ export default function Home() {
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold mb-2 text-blue-400">Proxy Killer</h3>
-                  <p className="text-gray-300 mb-4">A flutter based mobile app to automate attendance system of universities.</p>
+                  <p className="text-gray-300 mb-4">A flutter based mobile app to automate attendance system of universities using IOT devices.</p>
                   <div className="flex flex-wrap gap-3 mb-4">
                     <SiFlutter className="text-2xl text-[#02569B]" title="Flutter" />
                     <SiFirebase className="text-2xl text-[#FFCA28]" title="Firebase" />
@@ -595,7 +681,7 @@ export default function Home() {
               <div className="col-span-1 md:col-span-2 lg:col-span-3 flex justify-center gap-8">
                 <div className="w-full md:w-auto grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[calc((100%-2rem)/3*2+1rem)]">
                   <motion.a
-                    href="https://github.com/Alve-2019331050/paper-watch"
+                    href="https://github.com/Fahad-Bin-Mahbub/Project_350_Frontend"
                     target="_blank"
                     rel="noopener noreferrer"
                     initial={{ opacity: 0, y: 20 }}
@@ -675,7 +761,7 @@ export default function Home() {
       </section>
 
       {/* Research Publications Section */}
-      <section className="py-20 relative z-10">
+      <section className="py-32 relative z-10">
         <div className="container mx-auto px-3 md:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0 }}
@@ -716,7 +802,7 @@ export default function Home() {
       </section>
 
       {/* ProblemSetting and Judgement Section */}
-      <section className="py-20 relative z-10">
+      <section className="py-32 relative z-10">
         <div className="container mx-auto px-3 md:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0 }}
@@ -803,7 +889,7 @@ export default function Home() {
       </section>
 
       {/* Voluntary Activities Section */}
-      <section className="py-20 relative z-10">
+      <section className="py-32 relative z-10">
         <div className="container mx-auto px-3 md:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0 }}
@@ -856,7 +942,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20">
+      <section className="py-32">
         <div className="container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0 }}
@@ -878,6 +964,14 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+      {/* Copyright Footer */}
+      <div className="w-full py-6 text-center bg-black/30 backdrop-blur-sm mt-20">
+        <div className="flex items-center justify-center gap-2 text-gray-400">
+          <FiCopy className="text-lg" />
+          <span>&copy; 2025 MD. Shibly Rahman Alve. All rights reserved.</span>
+        </div>
+      </div>
     </main>
   );
 }
