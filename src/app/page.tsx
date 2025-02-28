@@ -168,7 +168,7 @@ export default function Home() {
                 href="https://github.com/Alve-2019331050"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-4xl sm:text-3xl text-[#333] hover:text-[#24292e] dark:text-[#efefef] dark:hover:text-white transition-all duration-300 hover:scale-125 hover:-translate-y-1 transform cursor-pointer"
+                className="text-4xl sm:text-3xl text-[#efefef] hover:text-white transition-all duration-300 hover:scale-125 hover:-translate-y-1 transform cursor-pointer"
               >
                 <FaGithub />
               </a>
@@ -190,7 +190,7 @@ export default function Home() {
                 href="https://www.facebook.com/alve.rahman.699672"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-4xl sm:text-3xl text-gray-400 hover:text-blue-600 dark:text-blue-600 transition-all duration-300 hover:scale-125 hover:-translate-y-1 transform cursor-pointer"
+                className="text-4xl sm:text-3xl text-[#1877F2] hover:text-[#165ECA] transition-all duration-300 hover:scale-125 hover:-translate-y-1 transform cursor-pointer"
               >
                 <FaFacebook />
               </a>
