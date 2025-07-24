@@ -1637,8 +1637,7 @@ export default function Home() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: true }}
                 className="glass p-8 rounded-2xl group"
-                whileHover={{ y: -4 }}
-                transition={{ duration: 0.3 }}
+                whileHover={{ y: -4, transition: { duration: 0.3 } }}
               >
                 <div className="flex flex-col lg:flex-row items-start gap-8">
                   {/* Conference Logo */}
@@ -1725,8 +1724,7 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 viewport={{ once: true }}
                 className="glass p-6 rounded-xl group"
-                whileHover={{ y: -4 }}
-                transition={{ duration: 0.3 }}
+                whileHover={{ y: -4, transition: { duration: 0.3 } }}
               >
                 <div className="flex flex-col lg:flex-row items-center gap-6">
                   <div className="flex-shrink-0">
@@ -1764,8 +1762,7 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
                 className="glass p-6 rounded-xl group"
-                whileHover={{ y: -4 }}
-                transition={{ duration: 0.3 }}
+                whileHover={{ y: -4, transition: { duration: 0.3 } }}
               >
                 <div className="flex flex-col lg:flex-row items-center gap-6">
                   <div className="flex-shrink-0">
@@ -1804,8 +1801,7 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 viewport={{ once: true }}
                 className="glass p-6 rounded-xl group"
-                whileHover={{ y: -4 }}
-                transition={{ duration: 0.3 }}
+                whileHover={{ y: -4, transition: { duration: 0.3 } }}
               >
                 <div className="flex flex-col lg:flex-row items-center gap-6">
                   <div className="flex-shrink-0">
@@ -1843,8 +1839,7 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 viewport={{ once: true }}
                 className="glass p-6 rounded-xl group"
-                whileHover={{ y: -4 }}
-                transition={{ duration: 0.3 }}
+                whileHover={{ y: -4, transition: { duration: 0.3 } }}
               >
                 <div className="flex flex-col lg:flex-row items-center gap-6">
                   <div className="flex-shrink-0">
@@ -1903,8 +1898,7 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 viewport={{ once: true }}
                 className="glass p-8 rounded-2xl group"
-                whileHover={{ y: -4 }}
-                transition={{ duration: 0.3 }}
+                whileHover={{ y: -4, transition: { duration: 0.3 } }}
               >
                 <div className="text-center space-y-6">
                   <div className="relative mx-auto w-20 h-20 bg-gradient-to-br from-pink-500/20 to-amethyst-500/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -1935,8 +1929,7 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
                 className="glass p-8 rounded-2xl group"
-                whileHover={{ y: -4 }}
-                transition={{ duration: 0.3 }}
+                whileHover={{ y: -4, transition: { duration: 0.3 } }}
               >
                 <div className="text-center space-y-6">
                   <div className="relative mx-auto w-20 h-20 bg-gradient-to-br from-sapphire-500/20 to-pink-500/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
